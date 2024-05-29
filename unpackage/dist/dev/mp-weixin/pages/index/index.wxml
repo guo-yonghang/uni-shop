@@ -1,0 +1,1 @@
+<view class="">控制台</view><view class="">pinia-id：{{a}}</view><button bindtap="{{b}}">改变id</button>

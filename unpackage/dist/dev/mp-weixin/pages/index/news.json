@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "资讯",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tabs": "../../components/Tabs/Tabs",
+    "uni-list-item": "../../uni_modules/uni-list/components/uni-list-item/uni-list-item",
+    "uni-list": "../../uni_modules/uni-list/components/uni-list/uni-list",
+    "empty": "../../components/Empty/Empty",
+    "uni-load-more": "../../uni_modules/uni-load-more/components/uni-load-more/uni-load-more"
+  }
+}

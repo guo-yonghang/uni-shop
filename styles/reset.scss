@@ -1,0 +1,20 @@
+page {
+	background-color: #f8f8f8;
+	--color-primary: #007aff;
+	--color-success: #4cd964;
+	--color-warning: #f0ad4e;
+	--color-danger: #dd524d;
+}
+
+page,
+view,
+cover-view,
+text,
+rich-text,
+image,
+form,
+input,
+button,
+textarea {
+	box-sizing: border-box;
+}

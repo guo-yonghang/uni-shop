@@ -1,0 +1,24 @@
+.flx {
+	display: flex;
+}
+
+.flx1 {
+	flex: 1;
+}
+
+.flxc {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flxsc {
+	display: flex;
+	align-items: center;
+}
+
+.flxscb {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

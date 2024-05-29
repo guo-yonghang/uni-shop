@@ -1,0 +1,65 @@
+{
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "店铺"
+			}
+		},
+		{
+			"path": "pages/index/news",
+			"style": {
+				"navigationBarTitleText": "资讯",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/index/chat",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/index/myself",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}
+	],
+	"tabBar": {
+		"borderStyle": "white",
+		"color": "#333",
+		"selectedColor": "#007aff",
+		"list": [{
+				"text": "控制台",
+				"iconPath": "/static/tabbar/apps.png",
+				"selectedIconPath": "/static/tabbar/apps_fill.png",
+				"pagePath": "pages/index/index"
+			},
+			{
+				"text": "资讯",
+				"iconPath": "/static/tabbar/detail.png",
+				"selectedIconPath": "/static/tabbar/detail_fill.png",
+				"pagePath": "pages/index/news"
+			},
+			{
+				"text": "消息",
+				"iconPath": "/static/tabbar/message.png",
+				"selectedIconPath": "/static/tabbar/message_fill.png",
+				"pagePath": "pages/index/chat"
+			}, {
+				"text": "我的",
+				"iconPath": "/static/tabbar/my.png",
+				"selectedIconPath": "/static/tabbar/my_fill.png",
+				"pagePath": "pages/index/myself"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

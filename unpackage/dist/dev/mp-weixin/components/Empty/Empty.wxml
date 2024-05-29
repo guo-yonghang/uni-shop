@@ -1,0 +1,1 @@
+<view class="empty-container data-v-10231f6d"><image class="data-v-10231f6d" src="{{a}}" mode="widthFix" style="{{'width:' + b + ';' + ('height:' + c)}}"></image><block wx:if="{{$slots.text}}"><slot name="text"></slot></block><block wx:else><view class="text data-v-10231f6d">{{d}}</view></block><slot name="btn"></slot></view>

@@ -1,0 +1,80 @@
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.tabs-container {
+  width: 100%;
+  left: 0;
+  z-index: 500;
+  background-color: #ffffff;
+}
+.tabs-list {
+  width: 100%;
+  height: 44px;
+  padding: 0 5px;
+  position: relative;
+}
+.tabs-list ::-webkit-scrollbar {
+  display: none;
+}
+.tabs-list .tabs-nav {
+  min-width: 100%;
+  white-space: nowrap;
+  text-align: center;
+  flex-direction: row;
+  display: flex;
+}
+.tabs-list .tabs-nav .tabs-item {
+  height: 44px;
+  line-height: 44px;
+  color: #666666;
+  position: relative;
+  display: flex;
+}
+.tabs-list .tabs-nav .tabs-item .tabs-item__text {
+  white-space: nowrap;
+  transition: transform 300ms;
+}
+.tabs-list .tabs-nav .tabs-item.selected .tabs-item__text {
+  transform: scale(1.12);
+  color: var(--color-primary, #007aff);
+  font-weight: 500;
+}
+.tabs-list .tabs-nav .tabs-item .tabs-item__dot {
+  position: absolute;
+  top: 0;
+  transform: translateX(75%) translateY(50%);
+  font-size: 10px;
+  line-height: 12px;
+  color: #ffffff;
+  background-color: var(--color-danger, #dd524d);
+  padding: 0 4px;
+  border-radius: 20px;
+}
+.tabs-list .tabs-nav .tabs-item .tabs-item__dot.mini {
+  width: 8px;
+  height: 8px;
+  transform: translateX(75%) translateY(100%);
+}
+.tabs-list .line {
+  position: absolute;
+  top: 41px;
+  height: 2px;
+  transition: all 300ms;
+  display: flex;
+  justify-content: center;
+}
+.tabs-list .line .content {
+  width: calc(100% - var(--padding) * 2);
+  height: 3px;
+  background-color: var(--color-primary, #007aff);
+  border-radius: 10px;
+}
