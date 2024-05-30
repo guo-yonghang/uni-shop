@@ -2,7 +2,7 @@
 	<uni-list :border="true">
 		<template v-for="(item, index) in list" :key="index">
 			<uni-list-chat
-				:avatar-circle="true"
+				avatar-circle
 				title="逆境生长"
 				avatar="https://img.36krcdn.com/20200404/v2_d6613223fb15414897a0ba3449d00afd_img_png"
 				note="2024年已经过去了二分之一，但改变自己为时不晚"

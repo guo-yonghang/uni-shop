@@ -1,1 +1,1 @@
-<view class="">pinia-id：{{a}}</view><button bindtap="{{b}}">改变id</button>
+<uni-nav-bar wx:if="{{a}}" class="data-v-1cf27b2a" u-s="{{['left']}}" u-i="1cf27b2a-0" bind:__l="__l" u-p="{{a}}"><image class="avatar data-v-1cf27b2a" src="http://jpf.wanrungj.com/upload/file/2023-08-15/1692105415893p8uESUXbpR.png" mode="aspectFill" slot="left"></image></uni-nav-bar><view class="header-wrapper data-v-1cf27b2a"></view>

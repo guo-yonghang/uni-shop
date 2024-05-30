@@ -8565,7 +8565,8 @@ const pages = [
   {
     path: "pages/index/index",
     style: {
-      navigationBarTitleText: "店铺"
+      navigationBarTitleText: "工作台",
+      navigationStyle: "custom"
     }
   },
   {
@@ -8595,7 +8596,7 @@ const tabBar = {
   selectedColor: "#007aff",
   list: [
     {
-      text: "控制台",
+      text: "工作台",
       iconPath: "/static/tabbar/apps.png",
       selectedIconPath: "/static/tabbar/apps_fill.png",
       pagePath: "pages/index/index"
@@ -8624,7 +8625,7 @@ const globalStyle = {
   navigationBarTextStyle: "black",
   navigationBarTitleText: "uni-app",
   navigationBarBackgroundColor: "#FFFFFF",
-  backgroundColor: "#F8F8F8"
+  backgroundColor: "#F6F6FB"
 };
 const uniIdRouter = {};
 const e = {

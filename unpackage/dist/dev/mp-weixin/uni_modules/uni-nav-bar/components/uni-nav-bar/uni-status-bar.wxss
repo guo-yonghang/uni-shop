@@ -10,8 +10,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.avatar.data-v-1cf27b2a {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+.uni-status-bar {
+  height: 20px;
 }
