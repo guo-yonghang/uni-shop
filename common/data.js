@@ -10,3 +10,4 @@ export const newsTabList = [
 	{ name: '恕瑞玛' },
 	{ name: '祖安', dot: 0 }
 ]
+//请求参数

@@ -1,8 +1,16 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
-const _sfc_main = {};
-function _sfc_render(_ctx, _cache) {
-  return {};
-}
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/Users/19512/Desktop/wjp-dealer-uni/pages/index/myself.vue"]]);
+const store_global = require("../../store/global.js");
+const _sfc_main = {
+  __name: "myself",
+  setup(__props) {
+    const globalStore = store_global.GlobalStore();
+    return (_ctx, _cache) => {
+      return {
+        a: common_vendor.t(common_vendor.unref(globalStore).id)
+      };
+    };
+  }
+};
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "C:/Users/19512/Desktop/uni-shop/pages/index/myself.vue"]]);
 wx.createPage(MiniProgramPage);

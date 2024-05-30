@@ -2,6 +2,7 @@
 const common_vendor = require("../../common/vendor.js");
 const common_data = require("../../common/data.js");
 const hooks_sliding = require("../../hooks/sliding.js");
+const hooks_paging = require("../../hooks/paging.js");
 if (!Array) {
   const _easycom_Tabs2 = common_vendor.resolveComponent("Tabs");
   const _easycom_uni_list_item2 = common_vendor.resolveComponent("uni-list-item");
@@ -21,50 +22,29 @@ if (!Math) {
 const _sfc_main = {
   __name: "news",
   setup(__props) {
-    let page = 1;
-    let flag = false;
     const current = common_vendor.ref(0);
-    const data = common_vendor.reactive({
-      loadStatus: "",
-      list: []
-    });
     const getList = (reload = false) => {
-      if (flag)
+      if (flag.value)
         return;
-      flag = true;
+      flag.value = true;
       if (reload) {
-        page = 1;
-        data.list = [];
+        page.value = 1;
+        list.value = [];
+        loadStatus.value = "";
       }
       common_vendor.index.showLoading({ title: "加载中", mask: true });
       setTimeout(() => {
-        const list = new Array(15).fill("");
-        data.list = data.list.concat(list);
-        data.loadStatus = page >= 4 ? "noMore" : "loading";
-        flag = false;
+        list.value = list.value.concat(new Array(15).fill(""));
+        loadStatus.value = page.value >= 4 ? "noMore" : "loading";
+        flag.value = false;
         common_vendor.index.hideLoading();
       }, 500);
     };
-    common_vendor.onLoad(() => {
-      getList(true);
-    });
-    common_vendor.onPullDownRefresh(() => {
-      getList(true);
-      setTimeout(() => {
-        common_vendor.index.stopPullDownRefresh();
-      }, 1e3);
-    });
-    common_vendor.onReachBottom(() => {
-      if (flag || data.loadStatus === "noMore")
-        return;
-      page += 1;
-      getList();
-    });
+    const { page, flag, list, loadStatus } = hooks_paging.usePaging(getList);
     const onTabChange = () => {
       getList(true);
     };
     const onSliding = (detail) => {
-      console.log(detail);
       if (detail === "left" && current.value !== common_data.newsTabList.length - 1) {
         current.value += 1;
       }
@@ -83,7 +63,7 @@ const _sfc_main = {
           sticky: true,
           modelValue: current.value
         }),
-        d: common_vendor.f(data.list, (item, index, i0) => {
+        d: common_vendor.f(common_vendor.unref(list), (item, index, i0) => {
           return {
             a: "d298a916-2-" + i0 + ",d298a916-1",
             b: index
@@ -98,21 +78,21 @@ const _sfc_main = {
         }),
         f: common_vendor.o(common_vendor.unref(onTouchStart)),
         g: common_vendor.o(common_vendor.unref(onTouchEnd)),
-        h: data.loadStatus === "noMore" && !data.list.length
-      }, data.loadStatus === "noMore" && !data.list.length ? {
+        h: common_vendor.unref(loadStatus) === "noMore" && !common_vendor.unref(list).length
+      }, common_vendor.unref(loadStatus) === "noMore" && !common_vendor.unref(list).length ? {
         i: common_vendor.p({
           type: "news",
           text: "没有新闻内容"
         })
       } : {}, {
-        j: data.list.length
-      }, data.list.length ? {
+        j: common_vendor.unref(list).length
+      }, common_vendor.unref(list).length ? {
         k: common_vendor.p({
-          status: data.loadStatus
+          status: common_vendor.unref(loadStatus)
         })
       } : {});
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-d298a916"], ["__file", "C:/Users/19512/Desktop/wjp-dealer-uni/pages/index/news.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-d298a916"], ["__file", "C:/Users/19512/Desktop/uni-shop/pages/index/news.vue"]]);
 wx.createPage(MiniProgramPage);

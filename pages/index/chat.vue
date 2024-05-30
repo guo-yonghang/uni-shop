@@ -1,6 +1,6 @@
 <template>
 	<uni-list :border="true">
-		<template v-for="(item, index) in data.list" :key="index">
+		<template v-for="(item, index) in list" :key="index">
 			<uni-list-chat
 				:avatar-circle="true"
 				title="逆境生长"
@@ -12,55 +12,33 @@
 			></uni-list-chat>
 		</template>
 	</uni-list>
-	<Empty type="message" text="没有消息内容" v-if="data.loadStatus === 'noMore' && !data.list.length"></Empty>
-	<uni-load-more :status="data.loadStatus" v-if="data.list.length"></uni-load-more>
+	<Empty type="message" text="没有消息内容" v-if="loadStatus === 'noMore' && !list.length"></Empty>
+	<uni-load-more :status="loadStatus" v-if="list.length"></uni-load-more>
 </template>
 
 <script setup>
 import { reactive, ref } from 'vue'
 import { onLoad, onPullDownRefresh, onReachBottom } from '@dcloudio/uni-app'
-
-let page = 1
-let flag = false
-const current = ref(0)
-const data = reactive({
-	loadStatus: '',
-	list: []
-})
+import { usePaging } from '@/hooks/index.js'
 
 const getList = (reload = false) => {
-	if (flag) return
-	flag = true
+	if (flag.value) return
+	flag.value = true
 	if (reload) {
-		page = 1
-		data.list = []
+		page.value = 1
+		list.value = []
+		loadStatus.value = ''
 	}
 	uni.showLoading({ title: '加载中', mask: true })
 	setTimeout(() => {
-		const list = new Array(15).fill('')
-		data.list = data.list.concat(list)
-		data.loadStatus = page >= 4 ? 'noMore' : 'loading'
-		flag = false
+		list.value = list.value.concat(new Array(15).fill(''))
+		loadStatus.value = page.value >= 4 ? 'noMore' : 'loading'
+		flag.value = false
 		uni.hideLoading()
 	}, 500)
 }
 
-onLoad(() => {
-	getList(true)
-})
-
-onPullDownRefresh(() => {
-	getList(true)
-	setTimeout(() => {
-		uni.stopPullDownRefresh()
-	}, 1000)
-})
-
-onReachBottom(() => {
-	if (flag || data.loadStatus === 'noMore') return
-	page += 1
-	getList()
-})
+const { page, flag, list, loadStatus } = usePaging(getList)
 </script>
 
 <style lang="scss"></style>

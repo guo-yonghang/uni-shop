@@ -1534,7 +1534,7 @@ function populateParameters(fromRes, toRes) {
   const hostLanguage = language.replace(/_/g, "-");
   const parameters = {
     appId: "__UNI__747636B",
-    appName: "wjp-dealer-uni",
+    appName: "uni-shop",
     appVersion: "1.0.0",
     appVersionCode: "100",
     appLanguage: getAppLanguage(hostLanguage),
@@ -1678,7 +1678,7 @@ const getAppBaseInfo = {
       hostSDKVersion: SDKVersion,
       hostTheme: theme,
       appId: "__UNI__747636B",
-      appName: "wjp-dealer-uni",
+      appName: "uni-shop",
       appVersion: "1.0.0",
       appVersionCode: "100",
       appLanguage: getAppLanguage(hostLanguage)
@@ -11342,7 +11342,6 @@ exports.onLoad = onLoad;
 exports.onPullDownRefresh = onPullDownRefresh;
 exports.onReachBottom = onReachBottom;
 exports.p = p$1;
-exports.reactive = reactive;
 exports.ref = ref;
 exports.resolveComponent = resolveComponent;
 exports.s = s$1;

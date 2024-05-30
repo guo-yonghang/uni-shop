@@ -25,5 +25,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     d: common_vendor.t($props.text)
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-10231f6d"], ["__file", "C:/Users/19512/Desktop/wjp-dealer-uni/components/Empty/Empty.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-10231f6d"], ["__file", "C:/Users/19512/Desktop/uni-shop/components/Empty/Empty.vue"]]);
 wx.createComponent(Component);
